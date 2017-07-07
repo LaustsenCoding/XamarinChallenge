@@ -13,5 +13,32 @@ namespace XamarinChallenge
         {
             InitializeComponent();
         }
+
+        void CarouselPageButton_Clicked()
+        {
+            
+        }
+
+        void ContentPageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageNavigation.ContentPageDemo());
+
+        }
+
+        void MasterPageDetailButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageNavigation.MasterDetailPageDemo());
+        }
+
+        void NavigationPageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageNavigation.CarouselPageDemo());
+        }
+
+        private void TabbedPageButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageNavigation.TabbedPageDemo());
+
+        }
     }
 }

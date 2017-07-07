@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinChallenge.PageNavigation.TabbedPageDemo">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Tab 1">
+        <Label Text="Tab 1"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+    </ContentPage>
+    <ContentPage Title="Tab 2">
+        <Label Text="Tab 2"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+    </ContentPage>
+    <ContentPage Title="Tab 3">
+        <Label Text="Tab 3"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+    </ContentPage>
+</TabbedPage>

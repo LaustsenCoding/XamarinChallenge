@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinChallenge.PageNavigation.CarouselPageDemo">
+    <ContentPage>
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="CenterAndExpand">
+            <BoxView Color="Red" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="Swipe left to view next screen"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="CenterAndExpand" >
+            <BoxView Color="Green" WidthRequest="200" HeightRequest="200" />
+            <Label Text="Swipe left or right to view next screen"/>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="CenterAndExpand" >
+            <BoxView Color="Blue" WidthRequest="200" HeightRequest="200"/>
+            <Label Text="Swipe right to view next screen"/>
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>

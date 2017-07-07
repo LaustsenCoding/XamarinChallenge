@@ -3,9 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinChallenge"
              x:Class="XamarinChallenge.MainPage">
-
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
-
+    <ScrollView VerticalOptions="Center" 
+                HorizontalOptions="Center">
+        <StackLayout>
+	        <Label Text="Welcome to Xamarin Forms!" 
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" />
+            <Button Text="CarouselPage"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="NavigationPageButton_Clicked"/>            
+            <Button Text="ContentPage"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="ContentPageButton_Clicked"/>
+            <Button Text="MasterDetailPage"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="MasterPageDetailButton_Clicked"/>
+            <Button Text="NavigationPage"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
+            <Button Text="TabbedPage"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="TabbedPageButton_Clicked"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -41,6 +41,25 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageNavigation\CarouselPageDemo.xaml.cs">
+      <DependentUpon>CarouselPageDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageNavigation\ContentPageDemo.xaml.cs">
+      <DependentUpon>ContentPageDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageNavigation\MasterDetailPageDemo.xaml.cs">
+      <DependentUpon>MasterDetailPageDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageNavigation\MasterDetailPageDemoDetail.xaml.cs">
+      <DependentUpon>MasterDetailPageDemoDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageNavigation\MasterDetailPageDemoMaster.xaml.cs">
+      <DependentUpon>MasterDetailPageDemoMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageNavigation\MasterDetailPageDemoMenuItem.cs" />
+    <Compile Include="PageNavigation\TabbedPageDemo.xaml.cs">
+      <DependentUpon>TabbedPageDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +88,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNavigation\ContentPageDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNavigation\TabbedPageDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNavigation\MasterDetailPageDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNavigation\MasterDetailPageDemoMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNavigation\MasterDetailPageDemoDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PageNavigation\CarouselPageDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
