@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Microsoft.WindowsAzure.MobileServices;
+using System.Diagnostics;
 
 namespace XamarinChallenge
 {
@@ -12,27 +14,29 @@ namespace XamarinChallenge
         public MainPage()
         {
             InitializeComponent();
+            try {
+                var t = new MobileServiceClient("https://xamarinchallengedemo.azurewebsites.net");
+                TodoItem item = new TodoItem { Text = "Awesome item" };
+                t.GetTable<TodoItem>().InsertAsync(item);
+            } catch(Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
         }
 
-        void CarouselPageButton_Clicked()
+        void CarouselPageButton_Clicked(object sender, EventArgs e)
         {
-            
+            Navigation.PushAsync(new PageNavigation.CarouselPageDemo());
         }
 
         void ContentPageButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PageNavigation.ContentPageDemo());
-
         }
 
         void MasterPageDetailButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PageNavigation.MasterDetailPageDemo());
-        }
-
-        void NavigationPageButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new PageNavigation.CarouselPageDemo());
         }
 
         private void TabbedPageButton_Clicked(object sender, EventArgs e)

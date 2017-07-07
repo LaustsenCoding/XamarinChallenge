@@ -12,7 +12,7 @@
             <Button Text="CarouselPage"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
-                    Clicked="NavigationPageButton_Clicked"/>            
+                    Clicked="CarouselPageButton_Clicked"/>            
             <Button Text="ContentPage"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
@@ -21,9 +21,6 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     Clicked="MasterPageDetailButton_Clicked"/>
-            <Button Text="NavigationPage"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"/>
             <Button Text="TabbedPage"
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
