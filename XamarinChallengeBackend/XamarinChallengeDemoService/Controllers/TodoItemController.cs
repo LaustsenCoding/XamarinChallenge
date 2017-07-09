@@ -9,6 +9,7 @@ using XamarinChallengeDemoService.Models;
 
 namespace XamarinChallengeDemoService.Controllers
 {
+    [Authorize]
     public class TodoItemController : TableController<TodoItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)

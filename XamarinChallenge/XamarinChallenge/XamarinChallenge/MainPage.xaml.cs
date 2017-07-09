@@ -14,14 +14,7 @@ namespace XamarinChallenge
         public MainPage()
         {
             InitializeComponent();
-            try {
-                var t = new MobileServiceClient("https://xamarinchallengedemo.azurewebsites.net");
-                TodoItem item = new TodoItem { Text = "Awesome item" };
-                t.GetTable<TodoItem>().InsertAsync(item);
-            } catch(Exception e)
-            {
-                Debug.WriteLine(e.ToString());
-            }
+
         }
 
         void CarouselPageButton_Clicked(object sender, EventArgs e)
@@ -43,6 +36,20 @@ namespace XamarinChallenge
         {
             Navigation.PushAsync(new PageNavigation.TabbedPageDemo());
 
+        }
+
+        void storage()
+        {
+            try
+            {
+                var t = new MobileServiceClient("https://xamarinchallengedemo.azurewebsites.net");
+                TodoItem item = new TodoItem { Text = "Awesome item" };
+                t.GetTable<TodoItem>().InsertAsync(item);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
         }
     }
 }
