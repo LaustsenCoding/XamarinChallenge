@@ -25,6 +25,10 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     Clicked="TabbedPageButton_Clicked"/>
+            <Button Text="Login"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="LoginButton_Clicked"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

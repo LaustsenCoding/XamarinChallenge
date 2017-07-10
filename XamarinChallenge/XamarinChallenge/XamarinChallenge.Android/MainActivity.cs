@@ -41,8 +41,7 @@ namespace XamarinChallenge.Droid
                     MobileServiceAuthenticationProvider.Facebook);
                 if (user != null)
                 {
-                    message = string.Format("you are now signed-in as {0}.",
-                        user.UserId);
+                    //message = string.Format("you are now signed-in as {0}.", user.UserId);
                     success = true;
                 }
             }

@@ -64,5 +64,10 @@ namespace XamarinChallenge
                 authenticated = await App.Authenticator.Authenticate();
             }
         }
+
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            Authenticate();
+        }
     }
 }
