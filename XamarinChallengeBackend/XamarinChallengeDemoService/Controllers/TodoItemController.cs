@@ -4,12 +4,14 @@ using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.OData;
 using Microsoft.Azure.Mobile.Server;
+using Microsoft.Azure.Mobile.Server.Config;
 using XamarinChallengeDemoService.DataObjects;
 using XamarinChallengeDemoService.Models;
 
 namespace XamarinChallengeDemoService.Controllers
 {
     [Authorize]
+    [MobileAppController]
     public class TodoItemController : TableController<TodoItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
