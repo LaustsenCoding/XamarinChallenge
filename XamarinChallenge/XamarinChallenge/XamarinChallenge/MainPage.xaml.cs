@@ -11,9 +11,13 @@ namespace XamarinChallenge
 {
     public partial class MainPage : ContentPage
     {
+        // Track whether the user has authenticated.
+        private bool authenticated = false;
+        private const string FBAppID= "691733354348213";
         public MainPage()
         {
             InitializeComponent();
+
 
         }
 
@@ -42,13 +46,22 @@ namespace XamarinChallenge
         {
             try
             {
-                var t = new MobileServiceClient("https://xamarinchallengedemo.azurewebsites.net");
+                var t = new MobileServiceClient(Constants.ApplicationURL);
                 TodoItem item = new TodoItem { Text = "Awesome item" };
                 t.GetTable<TodoItem>().InsertAsync(item);
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.ToString());
+            }
+        }
+
+        private async void Authenticate()
+        {
+            // Refresh items only when authenticated.
+            if (App.Authenticator != null)
+            {
+                authenticated = await App.Authenticator.Authenticate();
             }
         }
     }

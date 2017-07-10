@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
 namespace XamarinChallenge
 {
+    public interface IAuthenticate
+    {
+        Task<bool> Authenticate();
+    }
+
     public partial class App : Application
     {
         public App()
@@ -14,6 +20,13 @@ namespace XamarinChallenge
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+        }
+
+        public static IAuthenticate Authenticator { get; private set; }
+
+        public static void Init(IAuthenticate authenticator)
+        {
+            Authenticator = authenticator;
         }
 
         protected override void OnStart()
@@ -30,5 +43,6 @@ namespace XamarinChallenge
         {
             // Handle when your app resumes
         }
+
     }
 }

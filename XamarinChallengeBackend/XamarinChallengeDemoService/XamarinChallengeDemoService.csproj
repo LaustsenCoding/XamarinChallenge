@@ -170,6 +170,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\XamarinChallengeDemo - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\XamarinChallengeDemo - Web Deploy.pubxml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
