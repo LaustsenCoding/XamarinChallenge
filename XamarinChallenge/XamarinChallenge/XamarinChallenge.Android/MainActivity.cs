@@ -29,20 +29,19 @@ namespace XamarinChallenge.Droid
             LoadApplication(new App());
         }
 
-        public async Task<bool> Authenticate()
+        public async Task<MobileServiceUser> Authenticate()
         {
             var success = false;
             var message = string.Empty;
             try
             {
                 // Sign in with Facebook login using a server-managed flow.
+                
                 MobileServiceClient mobileClient = new MobileServiceClient(Constants.ApplicationURL);
-                user = await mobileClient.LoginAsync(this,
-                    MobileServiceAuthenticationProvider.Facebook);
+                user = await mobileClient.LoginAsync(this, MobileServiceAuthenticationProvider.Facebook);
                 if (user != null)
                 {
-                    //message = string.Format("you are now signed-in as {0}.", user.UserId);
-                    success = true;
+                    message = string.Format("you are now signed-in as {0}.", user.UserId);
                 }
             }
             catch (Exception ex)
@@ -56,7 +55,7 @@ namespace XamarinChallenge.Droid
             builder.SetTitle("Sign-in result");
             builder.Create().Show();
 
-            return success;
+            return user;
         }
     }
 }

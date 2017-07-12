@@ -29,6 +29,20 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     Clicked="LoginButton_Clicked"/>
+            <Button Text="GetToken"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="GetToken_Clicked"/>
+            <Button Text="PhotoButton"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="PhotoButton_Clicked"/>
+            <Label x:Name="TokenLabel"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Label x:Name="TestLabel"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

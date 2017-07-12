@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 
 namespace XamarinChallenge
 {
     public interface IAuthenticate
     {
-        Task<bool> Authenticate();
+        Task<MobileServiceUser> Authenticate();
     }
 
     public partial class App : Application
@@ -23,6 +23,8 @@ namespace XamarinChallenge
         }
 
         public static IAuthenticate Authenticator { get; private set; }
+
+        public static MobileServiceUser CurrentUser { get; set; }
 
         public static void Init(IAuthenticate authenticator)
         {

@@ -32,7 +32,7 @@ namespace XamarinChallenge.iOS
             return base.FinishedLaunching(app, options);
         }
 
-        public async Task<bool> Authenticate()
+        public async Task<MobileServiceUser> Authenticate()
         {
             var success = false;
             var message = string.Empty;
@@ -43,12 +43,10 @@ namespace XamarinChallenge.iOS
                 {
                     MobileServiceClient mobileClient = new MobileServiceClient(Constants.ApplicationURL);
 
-                    user = await mobileClient.LoginAsync(UIApplication.SharedApplication.KeyWindow.RootViewController,
-                        MobileServiceAuthenticationProvider.Facebook);
+                    user = await mobileClient.LoginAsync(UIApplication.SharedApplication.KeyWindow.RootViewController, MobileServiceAuthenticationProvider.Facebook);
                     if (user != null)
                     {
                         message = string.Format("You are now signed-in as {0}.", user.UserId);
-                        success = true;
                     }
                 }
             }
@@ -61,7 +59,7 @@ namespace XamarinChallenge.iOS
             UIAlertView avAlert = new UIAlertView("Sign-in result", message, null, "OK", null);
             avAlert.Show();
 
-            return success;
+            return user;
         }
     }
 }

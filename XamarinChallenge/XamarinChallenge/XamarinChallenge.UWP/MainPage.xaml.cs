@@ -34,7 +34,7 @@ namespace XamarinChallenge.UWP
 
         // Define a method that performs the authentication process
         // using a Facebook sign-in. 
-        public async Task<bool> Authenticate()
+        public async Task<MobileServiceUser> Authenticate()
         {
             string message;
             bool success = false;
@@ -45,10 +45,7 @@ namespace XamarinChallenge.UWP
                 MobileServiceClient mobileClient = new MobileServiceClient(Constants.ApplicationURL);
 
                 user = await mobileClient.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-                message =
-                    string.Format("You are now signed in - {0}", user.UserId);
-
-                success = true;
+                message = string.Format("You are now signed in - {0}", user.UserId);
             }
             catch (InvalidOperationException)
             {
@@ -58,7 +55,7 @@ namespace XamarinChallenge.UWP
             var dialog = new MessageDialog(message);
             dialog.Commands.Add(new UICommand("OK"));
             await dialog.ShowAsync();
-            return success;
+            return user;
         }
     }
 }
