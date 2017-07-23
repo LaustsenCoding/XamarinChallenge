@@ -7,6 +7,10 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 namespace XamarinChallenge.Droid
 {
     [Activity(Label = "XamarinChallenge", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -16,6 +20,8 @@ namespace XamarinChallenge.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            MobileCenter.Start("50bea42c-a24a-4fb0-90ff-ba4da827d9c6", typeof(Analytics), typeof(Crashes));
 
             base.OnCreate(bundle);
 

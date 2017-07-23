@@ -5,6 +5,10 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 namespace XamarinChallenge.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -24,7 +28,7 @@ namespace XamarinChallenge.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            MobileCenter.Start("81e704ec-eda9-497d-a813-448302042d20", typeof(Analytics), typeof(Crashes));
             return base.FinishedLaunching(app, options);
         }
     }
