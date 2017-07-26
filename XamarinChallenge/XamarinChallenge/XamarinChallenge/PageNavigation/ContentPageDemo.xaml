@@ -7,6 +7,14 @@
                      HorizontalOptions="Center">
             <Label Text="ContentPage"/>
             <Label x:Name="test"/>
+
+            <Button Text="LoadImage"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Clicked="LoadImage_Clicked"/>
+            <Image x:Name="Img"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

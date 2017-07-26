@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
-using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.Azure.Mobile.Server.Config;
@@ -36,6 +31,7 @@ namespace XamarinChallengeDemoService.Controllers
         [HttpGet]
         public async Task<StorageTokenViewModel> GetAsync()
         {
+            /*
             // The userId is the SID without the sid: prefix
             var claimsPrincipal = User as ClaimsPrincipal;
             var userId = claimsPrincipal
@@ -48,14 +44,23 @@ namespace XamarinChallengeDemoService.Controllers
 
             // Get the user directory within the container
             var directory = container.GetDirectoryReference(userId);
-            var blobName = Guid.NewGuid().ToString("N");
+
+            */
+            // Get the user directory within the container
+            var container = BlobClient.GetContainerReference(containerName);
+            await container.CreateIfNotExistsAsync();
+            container.ListBlobs();
+
+
+            var userId = "cd2c39696f8d5ca59639c940b7ad861b";
+            var directory = container.GetDirectoryReference(userId);
+            var blobName = "533445f0e34a4991b2add7a343533810";
             var blob = directory.GetBlockBlobReference(blobName);
 
             // Create a policy for accessing the defined blob
             var blobPolicy = new SharedAccessBlobPolicy
             {
-                SharedAccessStartTime = DateTime.UtcNow.AddMinutes(-5),
-                SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(60),
+                SharedAccessExpiryTime = DateTime.Now.AddHours(2),
                 Permissions = SharedAccessBlobPermissions.Read
                             | SharedAccessBlobPermissions.Write
                             | SharedAccessBlobPermissions.Create

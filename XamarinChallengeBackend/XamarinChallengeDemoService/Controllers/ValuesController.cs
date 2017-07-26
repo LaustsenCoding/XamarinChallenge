@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using System.Web.Http.Tracing;
 using Microsoft.Azure.Mobile.Server;
 using Microsoft.Azure.Mobile.Server.Config;
@@ -20,7 +21,7 @@ namespace XamarinChallengeDemoService.Controllers
             string greeting = "Hello from " + host;
             
             traceWriter.Info(greeting);
-            return greeting;
+            return greeting + DateTime.Now;
         }
 
         // POST api/values

@@ -121,6 +121,8 @@ namespace XamarinChallenge
                 Debug.WriteLine("----------------------------------");
             }
 
+            TokenLabel.Text = token.SasToken;
+
             return token;
 
         }
@@ -196,5 +198,6 @@ namespace XamarinChallenge
                 IsBusy = false;
             }
         }
+
     }
 }
